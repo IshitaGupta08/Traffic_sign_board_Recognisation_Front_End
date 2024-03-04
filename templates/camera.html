@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Camera Webpage</title>
+<link rel="stylesheet" href="/static/camera.css">
+</head>
+<body>
+    <nav>
+        <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="login.html">Logout</a></li>
+        <li><a href="dataset.html">Dataset_Distribution</a></li>
+        <li><a href="performance.html">Performance_Analysis</a></li>
+        </ul>
+    </nav>
+  <video id="video" width="640" height="480" autoplay muted></video>
+  <button id="openButton">Open Camera</button>
+  <button id="closeButton">Close Camera</button>
+  <script>
+    const video = document.getElementById('video');
+    const openButton = document.getElementById('openButton');
+    const closeButton = document.getElementById('closeButton');
+
+    openButton.addEventListener('click', () => {
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+        video.srcObject = stream;
+        })
+        .catch(error => {
+        console.error('Error accessing camera:', error);
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+    video.srcObject.getTracks().forEach(track => track.stop());
+    video.srcObject = null;
+    });
+
+    </script>
+    </body>
+    </html>

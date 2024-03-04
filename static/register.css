@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/static/img/image.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 330px;
+    max-width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.register-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.register-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color:#04090e6d;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+nav li{
+    margin: 10px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}

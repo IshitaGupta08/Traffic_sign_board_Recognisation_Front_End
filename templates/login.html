@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+        </ul>
+    </nav>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" onsubmit="event.preventDefault(); login();">
+            <div class="form-group">
+                <label for="username">Enter Username:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Enter Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            var loginId = document.getElementById('username').value;
+            var loginPassword = document.getElementById('password').value;
+
+            // Retrieve existing user data from local storage
+            var existingData = JSON.parse(localStorage.getItem('userData')) || {};
+            console.log(existingData);
+
+            // Check if the ID is registered and the password matches
+            var storedPassword = existingData[loginId];
+
+            if (storedPassword && storedPassword === loginPassword) {
+                alert('Login successful. Welcome, ' + loginId + '!');
+                // Add your logic for what to do after successful login
+                // Redirect to the home page if needed
+                window.location.href = 'camera.html';
+            } else {
+                alert('Invalid ID or password. Please try again.');
+            }
+        }
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
